@@ -7,7 +7,11 @@ This document describes changes between each past release.
 9.2.0 (unreleased)
 ==================
 
-- Nothing changed yet.
+**Breaking changes**
+
+By default, the client now raises an exception when a 4XX error occurs in a batch request (#154)
+
+In order to ignore those errors as before, instantiate the client with ``ignore_batch_4xx=True``.
 
 
 9.1.2 (2018-04-17)

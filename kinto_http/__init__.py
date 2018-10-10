@@ -8,13 +8,13 @@ import logging
 from kinto_http import utils
 from kinto_http.session import create_session, Session
 from kinto_http.batch import BatchSession
-from kinto_http.exceptions import BucketNotFound, KintoException
+from kinto_http.exceptions import BucketNotFound, KintoException, KintoBatchException
 from kinto_http.patch_type import PatchType, BasicPatch
 
 logger = logging.getLogger('kinto_http')
 
 __all__ = ('Endpoints', 'Session', 'Client',
-           'create_session', 'BucketNotFound', 'KintoException')
+           'create_session', 'BucketNotFound', 'KintoException', 'KintoBatchException')
 
 
 OBJECTS_PERMISSIONS = {
