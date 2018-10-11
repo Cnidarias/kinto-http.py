@@ -1,12 +1,13 @@
-import mock
+import unittest
+from unittest import mock
 import pytest
 
 from kinto_http import (KintoException, KintoBatchException, BucketNotFound,
-    Client, DO_NOT_OVERWRITE)
+                        Client, DO_NOT_OVERWRITE)
 from kinto_http.session import create_session
 from kinto_http.patch_type import MergePatch, JSONPatch
 
-from .support import unittest, mock_response, build_response, get_http_error
+from .support import mock_response, build_response, get_http_error
 
 
 class ClientTest(unittest.TestCase):
