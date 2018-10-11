@@ -49,7 +49,7 @@ class FunctionalTest(unittest.TestCase):
         resp.raise_for_status()
 
     def create_user(self, credentials):
-        account_url = urljoin(self.server_url, f'/accounts/{credentials[0]}')
+        account_url = urljoin(self.server_url, '/accounts/{}'.format(credentials[0]))
         r = requests.put(account_url, json={"data": {"password": credentials[1]}},
                          auth=DEFAULT_AUTH)
         r.raise_for_status()
@@ -57,7 +57,7 @@ class FunctionalTest(unittest.TestCase):
 
     def get_user_id(self, credentials):
         r = self.create_user(credentials)
-        return f'account:{r["data"]["id"]}'
+        return 'account:{}'.format(r["data"]["id"])
 
     def test_bucket_creation(self):
         bucket = self.client.create_bucket(id='mozilla')
